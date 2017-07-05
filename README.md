@@ -91,7 +91,7 @@
 }
 ```
 
-## 轮播实现步骤
+## Theory 轮播实现步骤
 ### 层级结构
 最底层是一个UIView，上面有一个UIScrollView以及UIPageControl，scrollView上有两个UIImageView，imageView宽高 = scrollview宽高 = view宽高
 ![](http://og1yl0w9z.bkt.clouddn.com/17-7-5/42630920.jpg)
@@ -269,9 +269,8 @@ for (int i = 0; i < imageArray.count; i++) {
 
 使用简单、效率高效、进程安全~~~如果你有更好的建议,希望不吝赐教!
 ### 你的star是我持续更新的动力!
-===
 
-## 联系方式:
+## Contact 联系方式:
 * WeChat : WhatsXie
 * Email : ReverseScale@iCloud.com
 * QQ : 1129998515
