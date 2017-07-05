@@ -216,3 +216,63 @@ for (int i = 0; i < imageArray.count; i++) {
 ```
 下载图片，先从缓存中取，如果有，则替换之前的占位图片，如果没有，去沙盒中取，如果有，替换占位图片，并添加到缓存中，如果没有，开启异步线程下载
 ```
+- (void)downloadImages:(int)index {
+  NSString *key = _imageArray[index];
+  //从字典缓存中取图片
+  UIImage *image = [self.imageDic objectForKey:key];
+  if (image) {
+    _images[index] = image;//如果图片存在，则直接替换之前的占位图片
+  }else{
+    //字典中没有从沙盒中取图片
+    NSString *cache = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *path = [cache stringByAppendingPathComponent:[key lastPathComponent]];
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    if (data) {
+             //沙盒中有，替换占位图片，并加入字典缓存中
+      image = [UIImage imageWithData:data];
+      _images[index] = image;
+      [self.imageDic setObject:image forKey:key];
+    }else{
+       //字典沙盒都没有，下载图片
+      NSBlockOperation *download = [self.operationDic objectForKey:key];//查看下载操作是否存在
+      if (!download) {//不存在
+        //创建一个队列，默认为并发队列
+        NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+        //创建一个下载操作
+        download = [NSBlockOperation blockOperationWithBlock:^{
+          NSURL *url = [NSURL URLWithString:key];
+          NSData *data = [NSData dataWithContentsOfURL:url];
+           if (data) {
+                        //下载完成后，替换占位图片，存入字典并写入沙盒，将下载操作从字典中移除掉
+            UIImage *image = [UIImage imageWithData:data];
+            [self.imageDic setObject:image forKey:key];
+            self.images[index] = image;
+                        //如果只有一张图片，需要在主线程主动去修改currImageView的值
+            if (_images.count == 1) [_currImageView performSelectorOnMainThread:@selector(setImage:) withObject:image waitUntilDone:NO];
+            [data writeToFile:path atomically:YES];
+            [self.operationDic removeObjectForKey:key]; 
+            }
+        }];
+        [queue addOperation:download];
+        [self.operationDic setObject:download forKey:key];//将下载操作加入字典
+      }
+    }
+  }
+}
+```
+### 监听图片点击
+当图片被点击的时候，我们往往需要执行某些操作，因此需要监听图片的点击，思路如下
+1.定义一个block属性暴露给外界void(^imageClickBlock)(NSInteger index)
+2.设置currImageView的userInteractionEnabled为YES
+3.给currImageView添加一个点击的手势
+4.在手势方法里调用block，并传入图片索引
+
+使用简单、效率高效、进程安全~~~如果你有更好的建议,希望不吝赐教!
+### 你的star是我持续更新的动力!
+===
+
+## 联系方式:
+* WeChat : WhatsXie
+* Email : ReverseScale@iCloud.com
+* QQ : 1129998515
+
