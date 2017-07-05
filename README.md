@@ -12,11 +12,11 @@
 | 文件名 | 1.Main.storyboard  2.CreatedByXIBViewController  3.CreatedByCodeViewController | 1.Main.storyboard 2.CreatedByXIBViewController  3.CreatedByCodeViewController | 1.Main.storyboard  2.CreatedByXIBViewController  3.CreatedByCodeViewController | 
 | 描述 | 通过 storyboard 搭建基本框架 | 通过XIB方式加载视图 | 通过纯代码方式加载视图 | 
 
-|表类型         | 1.列表页           | 2.XIB创建  | 3.纯代码创建 |
-| ------------- |:-------------:| -----:| -----:|
-| col 3 is      | right-aligned | $1600 | $1600 |
-| col 2 is      | centered      |   $12 |   $12 |
-| zebra stripes | are neat      |    $1 |    $1 |
+| 名称         |1.列表页           |2.XIB创建  |3.纯代码创建 |
+| ------------- |:-------------:| -------------:| -------------:|
+| 截图      | right-aligned | $1600 | $1600 |
+| 文件名      | centered      |   $12 |   $12 |
+| 描述 | are neat      |    $1 |    $1 |
 
 ## Advantage 框架的优势
 1.文件少，代码简洁
