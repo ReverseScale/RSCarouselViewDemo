@@ -262,9 +262,13 @@ for (int i = 0; i < imageArray.count; i++) {
 ```
 ### 监听图片点击
 当图片被点击的时候，我们往往需要执行某些操作，因此需要监听图片的点击，思路如下
+
 1.定义一个block属性暴露给外界void(^imageClickBlock)(NSInteger index)
+
 2.设置currImageView的userInteractionEnabled为YES
+
 3.给currImageView添加一个点击的手势
+
 4.在手势方法里调用block，并传入图片索引
 
 使用简单、效率高效、进程安全~~~如果你有更好的建议,希望不吝赐教!
