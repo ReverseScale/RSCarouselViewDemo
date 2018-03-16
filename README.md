@@ -6,11 +6,11 @@
 ## Introduction 导语
 在不少项目中，都会有图片轮播这个功能，现在网上关于图片轮播的框架层出不穷，千奇百怪，笔者根据自己的思路，用两个imageView也实现了图片轮播。
 
-| 名称 |1.列表页 |2.XIB创建 |3.纯代码创建 |
-| ------------- | ------------- | ------------- | ------------- |
-| 截图 | ![](http://og1yl0w9z.bkt.clouddn.com/17-7-5/40982862.jpg) | ![](http://og1yl0w9z.bkt.clouddn.com/17-7-5/53634923.jpg) | ![](http://og1yl0w9z.bkt.clouddn.com/17-7-5/60384124.jpg) |
-| 文件名 | 1.Main.storyboard | 2.CreatedByXIBViewController | 3.CreatedByCodeViewController |
-| 描述 | 通过 storyboard 搭建基本框架 | 通过XIB方式加载视图 | 通过纯代码方式加载视图 |
+|1.列表页 |2.XIB创建 |3.纯代码创建 |
+| ------------- | ------------- | ------------- |
+| ![](http://og1yl0w9z.bkt.clouddn.com/18-3-16/40729058.jpg) | ![](http://og1yl0w9z.bkt.clouddn.com/18-3-16/54066601.jpg) | ![](http://og1yl0w9z.bkt.clouddn.com/18-3-16/18391498.jpg) |
+| 1.Main.storyboard | 2.CreatedByXIBViewController | 3.CreatedByCodeViewController |
+| 通过 storyboard 搭建基本框架 | 通过XIB方式加载视图 | 通过纯代码方式加载视图 |
 
 ## Advantage 框架的优势
 * 1.文件少，代码简洁
