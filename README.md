@@ -329,7 +329,7 @@ SOFTWARE.
 * Xcode 8+
 
 ##  🛠 安装
-### Created by XIB 通过XIB创建
+### 通过XIB创建
 ```
 - (void)setupCarouselByXIBWithArray:(NSArray *)arr {
     /**
@@ -357,7 +357,7 @@ SOFTWARE.
 }
 ```
 
-### Created by Code 通过纯代码创建
+### 通过纯代码创建
 ```
 - (void)setupCarouselByCodeWithArray:(NSArray *)arr describeArray:(NSArray *)describeArray {
     /**
@@ -400,7 +400,7 @@ SOFTWARE.
 }
 ```
 
-## Theory 轮播实现步骤
+## 轮播实现步骤
 ### 层级结构
 最底层是一个UIView，上面有一个UIScrollView以及UIPageControl，scrollView上有两个UIImageView，imageView宽高 = scrollview宽高 = view宽高
 ![](http://og1yl0w9z.bkt.clouddn.com/17-7-5/42630920.jpg)
